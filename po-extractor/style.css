@@ -1,0 +1,47 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	padding: 10px;
+}
+
+#dropper {
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+
+#dropper:before {
+	content: "Drag your files here...";
+	font-size: 60px;
+	color: #efefef;
+	border: 5px dashed #efefef;
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+#dropper.dragging:before {
+	content: "And now drop them to init processing...";
+	color: #000;
+	border-color: #000;
+}
+
+#dropper.processing:before {
+	content: "Processing, please wait...";
+}
+
+#progress-bar {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.25;
+}
+
+#dropper.processing + #progress-bar {
+	display: block;
+}
