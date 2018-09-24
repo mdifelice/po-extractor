@@ -132,6 +132,10 @@ document.addEventListener( 'DOMContentLoaded', function() {
 			callback( translation );
 		} );
 
+		client.addEventListener( 'error', function() {
+			callback( '' );
+		} );
+
 		client.open( 'GET', 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=' + encodeURIComponent( language ) + '&dt=t&q=' + encodeURIComponent( text ) );
 		client.send();
 	};
